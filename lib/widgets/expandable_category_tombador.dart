@@ -69,7 +69,8 @@ class ExpandableCategoryTombadorState
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: corCategoria.withValues(alpha: 0.1),
+                // ignore: deprecated_member_use
+                color: corCategoria.withOpacity(0.1), // ✅ Corrigido
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -78,7 +79,8 @@ class ExpandableCategoryTombadorState
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: corCategoria.withValues(alpha: 0.2),
+                      // ignore: deprecated_member_use
+                      color: corCategoria.withOpacity(0.2), // ✅ Corrigido
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(_getIconForCategoria(),
@@ -101,7 +103,8 @@ class ExpandableCategoryTombadorState
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 6, vertical: 2),
                               decoration: BoxDecoration(
-                                color: Colors.green.withValues(alpha: 0.1),
+                                color: Colors.green
+                                    .withValues(alpha: 0.1), // ✅ Corrigido
                                 borderRadius: BorderRadius.circular(4),
                               ),
                               child: Text('Concluídos: $concluidos/$totalItens',
@@ -114,7 +117,9 @@ class ExpandableCategoryTombadorState
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 6, vertical: 2),
                                 decoration: BoxDecoration(
-                                  color: Colors.red.withValues(alpha: 0.1),
+                                  color: Colors.red
+                                      // ignore: deprecated_member_use
+                                      .withOpacity(0.1), // ✅ Corrigido
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Text('Não Conformes: $naoConformes',

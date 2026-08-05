@@ -683,7 +683,9 @@ class _TombadorResultadoScreenState extends State<TombadorResultadoScreen> {
                               child: Container(
                                 padding: const EdgeInsets.all(2),
                                 decoration: BoxDecoration(
-                                    color: Colors.black.withValues(alpha: 0.6),
+                                    color: Colors.black
+                                        // ignore: deprecated_member_use
+                                        .withOpacity(0.6), // ✅ Corrigido
                                     shape: BoxShape.circle),
                                 child: const Icon(Icons.close,
                                     size: 16, color: Colors.white),
@@ -723,7 +725,8 @@ class _TombadorResultadoScreenState extends State<TombadorResultadoScreen> {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-                color: Colors.grey.withValues(alpha: 0.2),
+                // ignore: deprecated_member_use
+                color: Colors.grey.withOpacity(0.2), // ✅ Corrigido
                 blurRadius: 10,
                 offset: const Offset(0, -5))
           ],
@@ -795,7 +798,10 @@ class _TombadorResultadoScreenState extends State<TombadorResultadoScreen> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
-            color: isSelecionado ? cor.withValues(alpha: 0.1) : Colors.white,
+            color: isSelecionado
+                // ignore: deprecated_member_use
+                ? cor.withOpacity(0.1)
+                : Colors.white, // ✅ Corrigido
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(children: [

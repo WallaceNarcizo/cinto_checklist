@@ -29,7 +29,8 @@ class HomeScreen extends StatelessWidget {
                   Icon(
                     Icons.paragliding,
                     size: 70,
-                    color: Colors.white.withValues(alpha: 0.9),
+                    // ignore: deprecated_member_use
+                    color: Colors.white.withOpacity(0.9), // ✅ Corrigido
                   ),
                   const SizedBox(height: 16),
                   const Text(
@@ -115,7 +116,8 @@ class HomeScreen extends StatelessWidget {
                 'Versão 1.0.0',
                 style: TextStyle(
                   fontSize: 12,
-                  color: Colors.white.withValues(alpha: 0.5),
+                  // ignore: deprecated_member_use
+                  color: Colors.white.withOpacity(0.5), // ✅ Corrigido
                 ),
               ),
             ],
@@ -167,7 +169,8 @@ class HomeScreen extends StatelessWidget {
                       subtitle,
                       style: TextStyle(
                         fontSize: 12,
-                        color: Colors.white.withValues(alpha: 0.9),
+                        // ignore: deprecated_member_use
+                        color: Colors.white.withOpacity(0.9), // ✅ Corrigido
                       ),
                     ),
                   ],

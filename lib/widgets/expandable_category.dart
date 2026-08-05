@@ -76,7 +76,8 @@ class ExpandableCategoryState extends State<ExpandableCategory> {
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               decoration: BoxDecoration(
-                color: corCategoria.withValues(alpha: 0.1),
+                // ignore: deprecated_member_use
+                color: corCategoria.withOpacity(0.1), // ✅ Corrigido
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -85,7 +86,8 @@ class ExpandableCategoryState extends State<ExpandableCategory> {
                     width: 40,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: corCategoria.withValues(alpha: 0.2),
+                      // ignore: deprecated_member_use
+                      color: corCategoria.withOpacity(0.2), // ✅ Corrigido
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Icon(_getIconForCategoria(),
@@ -110,7 +112,9 @@ class ExpandableCategoryState extends State<ExpandableCategory> {
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 6, vertical: 2),
                               decoration: BoxDecoration(
-                                color: Colors.green.withValues(alpha: 0.1),
+                                color: Colors.green
+                                    // ignore: deprecated_member_use
+                                    .withOpacity(0.1), // ✅ Corrigido
                                 borderRadius: BorderRadius.circular(4),
                               ),
                               child: Text(
@@ -125,7 +129,9 @@ class ExpandableCategoryState extends State<ExpandableCategory> {
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 6, vertical: 2),
                                 decoration: BoxDecoration(
-                                  color: Colors.red.withValues(alpha: 0.1),
+                                  color: Colors.red
+                                      // ignore: deprecated_member_use
+                                      .withOpacity(0.1), // ✅ Corrigido
                                   borderRadius: BorderRadius.circular(4),
                                 ),
                                 child: Text(

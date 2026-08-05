@@ -696,7 +696,8 @@ class _RampaResultadoScreenState extends State<RampaResultadoScreen> {
                               child: Container(
                                 padding: const EdgeInsets.all(2),
                                 decoration: BoxDecoration(
-                                  color: Colors.black.withValues(alpha: 0.6),
+                                  color: Colors.black
+                                      .withValues(alpha: 0.6), // ✅ Corrigido
                                   shape: BoxShape.circle,
                                 ),
                                 child: const Icon(Icons.close,
@@ -741,7 +742,8 @@ class _RampaResultadoScreenState extends State<RampaResultadoScreen> {
           color: Colors.white,
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withValues(alpha: 0.2),
+              // ignore: deprecated_member_use
+              color: Colors.grey.withOpacity(0.2), // ✅ Corrigido
               blurRadius: 10,
               offset: const Offset(0, -5),
             ),
@@ -767,18 +769,17 @@ class _RampaResultadoScreenState extends State<RampaResultadoScreen> {
                 ? const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(
-                        width: 20,
-                        height: 20,
-                        child: CircularProgressIndicator(
-                          strokeWidth: 2,
-                          color: Colors.white,
+                        SizedBox(
+                          width: 20,
+                          height: 20,
+                          child: CircularProgressIndicator(
+                            strokeWidth: 2,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 12),
-                      Text('ENVIANDO...'),
-                    ],
-                  )
+                        SizedBox(width: 12),
+                        Text('ENVIANDO...'),
+                      ])
                 : const Text(
                     'FINALIZAR INSPEÇÃO',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -830,7 +831,10 @@ class _RampaResultadoScreenState extends State<RampaResultadoScreen> {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 16),
           decoration: BoxDecoration(
-            color: isSelecionado ? cor.withValues(alpha: 0.1) : Colors.white,
+            color: isSelecionado
+                // ignore: deprecated_member_use
+                ? cor.withOpacity(0.1)
+                : Colors.white, // ✅ Corrigido
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
